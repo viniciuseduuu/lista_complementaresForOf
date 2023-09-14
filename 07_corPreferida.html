@@ -8,11 +8,28 @@
     */
 
     //Entrada
+    const cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
+const coresPreferidas = [];
 
+//Processamento
+while (true) {
+  const corGostada = prompt("Digite uma cor que você gosta (ou digite 'sair' para encerrar):");
 
-    //Processamento
+  if (corGostada === null || corGostada.toLowerCase() === 'sair') {
+    break;
+  }
 
+  if (cores.includes(corGostada)) {
+    coresPreferidas.push(corGostada);
+  }
+}
 
-    //Saída
+//Saída
+if (coresPreferidas.length === 0) {
+  alert("Você não gosta de nenhuma das cores da lista.");
+} else {
+  alert(`Cores preferidas: ${coresPreferidas.join(', ')}`);
+  alert(`Quantidade de cores que você gosta: ${coresPreferidas.length}`);
+}
 
 </script>

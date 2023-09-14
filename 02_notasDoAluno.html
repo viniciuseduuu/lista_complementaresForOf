@@ -7,11 +7,29 @@
     */
 
     //Entrada
-
+    const notasAluno = [7, 5, 9, 8];
+    let maiorNota = notasAluno[0];
+    let menorNota = notasAluno[0];
+    let somaNotas = 0;
 
     //Processamento
+    for (let i = 0; i < notasAluno.length; i++) {
+        if (notasAluno[i] > maiorNota) {
+            maiorNota = notasAluno[i];
+        }
 
+        if (notasAluno[i] < menorNota) {
+            menorNota = notasAluno[i];
+        }
+
+        somaNotas += notasAluno[i];
+    }
+
+    const media = somaNotas / notasAluno.length;
 
     //Saída
+    alert(`Maior nota: ${maiorNota}`);
+    alert(`Menor nota: ${menorNota}`);
+    alert(`Média das notas: ${media}`);
 
 </script>

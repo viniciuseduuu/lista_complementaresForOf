@@ -6,11 +6,24 @@
     */
 
     //Entrada
+    const palavra = prompt("Digite uma palavra:");
+const vogais = "aeiouAEIOU";
+let countVogais = 0;
+let countConsoantes = 0;
 
+//Processamento
+for (let i = 0; i < palavra.length; i++) {
+  const caractere = palavra[i];
+  
+  if (vogais.includes(caractere)) {
+    countVogais++;
+  } else if (caractere.match(/[a-zA-Z]/)) {
+    countConsoantes++;
+  }
+}
 
-    //Processamento
-
-
-    //Saída
+//Saída
+alert(`Quantidade de vogais na palavra: ${countVogais}`);
+alert(`Quantidade de consoantes na palavra: ${countConsoantes}`);
 
 </script>

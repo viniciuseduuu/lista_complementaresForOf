@@ -7,11 +7,17 @@
     */
 
     //Entrada
-
+    const lista = ["A", "E", 2, 4.8, "CINQUENTA", "Araquari", 80, 10, 3.2];
+    let soma = 0;
 
     //Processamento
-
+    for (let i = 0; i < lista.length; i++) {
+        if (typeof lista[i] === 'number') {
+            soma += lista[i];
+        }
+    }
 
     //Saída
+    alert(`A soma dos números na lista é: ${soma}`);
 
 </script>

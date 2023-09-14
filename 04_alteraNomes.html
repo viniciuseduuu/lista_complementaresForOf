@@ -8,11 +8,40 @@
     */
 
     //Entrada
-
+    const nomes = ["Hilário", "Rafaela", "José", "Bárbara", "Fábio", "Júlia"];
+    const acentos = {
+        'á': 'a',
+        'é': 'e',
+        'í': 'i',
+        'ó': 'o',
+        'ú': 'u',
+        'Á': 'A',
+        'É': 'E',
+        'Í': 'I',
+        'Ó': 'O',
+        'Ú': 'U'
+    };
 
     //Processamento
+    for (let i = 0; i < nomes.length; i++) {
+        let nomeSemAcento = '';
+        const nome = nomes[i];
 
+        for (let j = 0; j < nome.length; j++) {
+            const caractere = nome[j];
+
+            if (acento[caractere]) {
+                nomeSemAcento += acentos[caractere];
+            } else {
+                nomeSemAcento += caractere;
+            }
+        }
+
+        nomes[i] = nomeSemAcento;
+    }
 
     //Saída
+    alert("Nomes corrigidos:");
+    alert(nomes.join(", "));
 
 </script>

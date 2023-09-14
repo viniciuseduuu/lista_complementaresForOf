@@ -8,11 +8,34 @@
     */
 
     //Entrada
+    const cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+const estados = {};
+
+//Processamento
+for (let i = 0; i < cidades.length; i++) {
+  const cidade = cidades[i];
+  const estado = prompt(`A qual estado pertence a cidade ${cidade}?`);
+
+  if (estado) {
+    if (!estados[estado]) {
+      estados[estado] = [];
+    }
+    
+    estados[estado].push(cidade);
+  }
+}
 
 
-    //Processamento
+const estadosOrdenados = Object.keys(estados).sort((a, b) => estados[b].length - estados[a].length);
 
 
-    //Saída
+for (let i = 0; i < estadosOrdenados.length; i++) {
+  const estado = estadosOrdenados[i];
+  const cidadesDoEstado = estados[estado];
+  const quantidadeDeCidades = cidadesDoEstado.length;
+
+  //Saída
+  alert(`${estado} (${quantidadeDeCidades} cidades): ${cidadesDoEstado.join(', ')}`);
+}
 
 </script>

@@ -7,11 +7,27 @@
     */
 
     //Entrada
+    const bebidas = ["Cerveja", "Vinho", "Suco Natural", "Tequila", "Água", "Refrigerante", "Vodka"];
+const bebidasPermitidas = [];
 
+//Processamento
+for (let i = 0; i < bebidas.length; i++) {
+  const bebida = bebidas[i];
+  const resposta = prompt(`A bebida "${bebida}" possui álcool? (Sim ou Não)`);
 
-    //Processamento
+  if (resposta && resposta.toLowerCase() === 'não') {
+    bebidasPermitidas.push(bebida);
+  }
+}
 
-
-    //Saída
+//Saída
+if (bebidasPermitidas.length === 0) {
+  alert("Não há bebidas permitidas para menores de 18 anos.");
+} else {
+  alert("Bebidas permitidas para menores de 18 anos:");
+  for (let i = 0; i < bebidasPermitidas.length; i++) {
+    alert(bebidasPermitidas[i]);
+  }
+}
 
 </script>
